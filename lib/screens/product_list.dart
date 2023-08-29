@@ -1,15 +1,12 @@
-import 'dart:convert';
-
 import 'package:badges/badges.dart' as badges;
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_cart_app/model/item_model.dart';
-import 'package:shopping_cart_app/model/product_model.dart';
 import 'package:shopping_cart_app/provider/cart_provider.dart';
 import 'package:shopping_cart_app/database/db_helper.dart';
 import 'package:shopping_cart_app/model/cart_model.dart';
 import 'package:shopping_cart_app/screens/cart_screen.dart';
+import 'package:dio/dio.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
@@ -20,31 +17,20 @@ class ProductList extends StatefulWidget {
 
 class _ProductListState extends State<ProductList> {
   DBHelper dbHelper = DBHelper();
-  // List<Product> _products = [];
 
-  // List<Product> parseProducts(String responseBody) {
-  //   final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  final dio = Dio();
+  void request() async {
+    Response response =
+        await dio.get('https://jsonplaceholder.typicode.com/todos/1');
+    print(response.data.toString());
 
-  //   return parsed.map<Product>((json) => Product.fromJson(json)).toList();
-  // }
+    return response.data;
+  }
 
-  // Future<List<Product>> fetchPhotos() async {
-  //   const apiUrl = 'http://ecom.test/api/v1/products';
-  //   final response = await http.get(Uri.parse(apiUrl));
-
-  //   return parseProducts(response.body);
-  // }
-
-  // Future<void> _fetchData() async {
-  //   const apiUrl = 'http://ecom.test/api/v1/products';
-
-  //   final response = await http.get(Uri.parse(apiUrl));
-  //   final data = json.decode(response.body);
-
-  //   setState(() {
-  //     _products = data['data'];
-  //   });
-  // }
+  void initState() {
+    request();
+    print(555);
+  }
 
   List<Item> products = [
     Item(
