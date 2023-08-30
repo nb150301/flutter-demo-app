@@ -77,18 +77,18 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Shipping Information',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -97,12 +97,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: fullNameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Full name',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -111,12 +111,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: emailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Email address',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -125,12 +125,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: phoneController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Phone number',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   DropdownButtonFormField<String>(
                     validator: (value) {
                       if (value == null ||
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }).toList(),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -166,12 +166,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: stateController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'State/Province/Region',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -180,12 +180,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: cityController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'City/Town',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -194,28 +194,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       return null;
                     },
                     controller: addressController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Address',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Shipping method',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   for (var item in dummyShippingMethod)
                     RadioListTile<String>(
                       title: Text(item['label']!),
@@ -231,11 +231,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Shipping payment',
                     style: TextStyle(
                       fontSize: 20,
@@ -257,23 +257,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Order note',
                     style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextFormField(
                     maxLines: 8,
                     controller: orderNoteController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Address',
                     ),
@@ -282,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: SizedBox(
                 height: 50,
                 child: FilledButton(
@@ -293,11 +293,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }
                   },
-                  child: Text('Checkout'),
+                  child: const Text('Checkout'),
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
           ],
         ),
       ),
